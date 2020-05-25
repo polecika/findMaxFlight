@@ -9,8 +9,8 @@ class Routes
         $maxRoute = [];
         usort($this->routes, function ($x,$y) {
             {
-                return $x->getArrival() > $y->getArrival() ? 1
-                    : ($x->getArrival() < $y->getArrival() ? -1
+                return $x->getDepart() > $y->getDepart() ? 1
+                    : ($x->getDepart() < $y->getDepart() ? -1
                     : ($x->getFlightTime() > $y->getFlightTime() ? 1
                     : ($x->getFlightTime() < $y->getFlightTime() ? -1
                     :0)));
@@ -19,7 +19,7 @@ class Routes
         });
         array_push($maxRoute, $this->routes[0]);
         foreach($this->routes as $route) {
-            if($maxRoute[count($maxRoute)-1]->getFrom() === $route->getTo() &&
+            if($maxRoute[count($maxRoute)-1]->getTo() === $route->getFrom() &&
                 $maxRoute[count($maxRoute)-1]->getArrival() < $route->getDepart()) {
                 array_push($maxRoute, $route);
             }
