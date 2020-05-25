@@ -26,12 +26,12 @@
         $arrival = date("d-m-Y H:i", $int2);
         $routes->addRoute(new Route($from, $to, $depart, $arrival));
     }
-    echo "<h4>Все вылеты:<h4> ".PHP_EOL;
-    $routes->printRoutes();
-    echo "_______________".PHP_EOL.
-        "Самый долгий";
+    /*echo "<h4>Все вылеты:</h4> ".PHP_EOL;
+    $routes->printRoutes();*/
+    echo "<h4>Самый долгий</h4>";
     $maxRoute = new Routes();
-    $maxRoute->setRoutes($routes->maxLongRoute());
+    $maxRoute->sortRoutes();
+    $maxRoute->setRoutes($routes->maxLongRoute($routes->getRoutes()));
     $maxRoute ->printRoutes();
 
 
