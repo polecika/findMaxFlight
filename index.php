@@ -26,7 +26,7 @@
         $arrival = date("d-m-Y H:i", $int2);
         $routes->addRoute(new Route($from, $to, $depart, $arrival));
     }
-    echo "Все вылеты: ".PHP_EOL;
+    echo "<h4>Все вылеты:<h4> ".PHP_EOL;
     $routes->printRoutes();
     echo "_______________".PHP_EOL.
         "Самый долгий";

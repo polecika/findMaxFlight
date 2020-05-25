@@ -49,10 +49,10 @@ class Routes
 
     public function printRoutes() {
         foreach($this->routes as $route) {
-            echo 'Откуда: '.$route->getFrom().PHP_EOL.
-                'Куда: '.$route->getTo().PHP_EOL.
-                'Дата вылета:'.$route->getDepart().PHP_EOL.
-                'Дата прилета: '.$route->getArrival().PHP_EOL;
+            echo '<p>Откуда: '.$route->getFrom().'</p>'.
+                '<p>Куда: '.$route->getTo().'</p>'.
+                '<p>Дата вылета:'.$route->getDepart().'</p>'.
+                '<p>Дата прилета: '.$route->getArrival().PHP_EOL.'</p><hr>';
         }
     }
 
