@@ -20,7 +20,7 @@ class Routes
         array_push($maxRoute, $this->routes[0]);
         foreach($this->routes as $route) {
             if($maxRoute[count($maxRoute)-1]->getTo() === $route->getFrom() &&
-                $maxRoute[count($maxRoute)-1]->getArrival() < $route->getDepart()) {
+                strtotime($maxRoute[count($maxRoute)-1]->getArrival()) < strtotime($route->getDepart())) {
                 array_push($maxRoute, $route);
             }
         }
